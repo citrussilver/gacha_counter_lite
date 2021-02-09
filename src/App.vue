@@ -23,5 +23,8 @@ export default {
 </script>
 
 <style>
-
+.footer {
+  background: #e69138;
+  color: #fff;
+}
 </style>
