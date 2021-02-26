@@ -12,7 +12,7 @@ export default {
     name: 'BannerLabel',
     data() {
         return {
-            currentWish: 'Invitation to Mundane Life',
+            currentWish: 'Dance of Lanterns',
         }
     },
 }
