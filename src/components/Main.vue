@@ -22,7 +22,9 @@
                     <div class="add-buttons-container-plus10">
                         <button @click.prevent="plus10" class="button is-success is-rounded override">+10</button>
                     </div>
-                    
+                </div>
+                <div id="reset-btn-container">
+                    <button @click.prevent="reset"  class="button is-danger is-rounded override">Reset</button>
                 </div>
             </div>
         </div>
@@ -43,7 +45,7 @@ export default {
     components: {
         BannerLabel
     },
-    created() {
+    mounted() {
         setInterval(this.getDateTime, 1000);
     },
     methods: {
@@ -56,24 +58,27 @@ export default {
         add: function() {
             toast({
                 message: 'You pulled 1 time at ' + this.timestamp,
-                type: 'is-danger',
+                type: 'is-success',
                 position: "top-center",
                 dismissible: true,
                 pauseOnHover: true,
                 closeOnClick: true
             });
-            return this.currentCount = this.currentCount + 1;
+            this.currentCount ++;
         },
         plus10: function() {
              toast({
                 message: 'You pulled 10 times at ' + this.timestamp,
-                type: 'is-danger',
+                type: 'is-success',
                 position: "top-center",
                 dismissible: true,
                 pauseOnHover: true,
                 closeOnClick: true
             });
-            return this.currentCount = this.currentCount + 10;
+            this.currentCount = this.currentCount + 10;
+        },
+        reset: function() {
+            this.currentCount = 0;
         }
     }
 }
@@ -112,5 +117,21 @@ export default {
         border: 1.5px solid #fff;
     }
 
+    #reset-btn-container {
+        margin: 1.5rem 0;
+    }
+
+    @media screen and (max-width: 600px) {
+
+        .counter-container, .add-buttons-container {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .counter-container-item, .img-container-item, .add-buttons-container-plus, .add-buttons-container-plus10 {
+            margin: 1rem 0;
+        }
+    }
 
 </style>
