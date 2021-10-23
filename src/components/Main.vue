@@ -17,14 +17,14 @@
                 </div>
                 <div class="add-buttons-container">
                     <div class="add-buttons-container-plus">
-                        <button @click.prevent="add" class="button is-success is-rounded override">+</button>
+                        <button @click.prevent="add" class="styled-button round">+</button>
                     </div>
                     <div class="add-buttons-container-plus10">
-                        <button @click.prevent="plus10" class="button is-success is-rounded override">+10</button>
+                        <button @click.prevent="plus10" class="styled-button round">+10</button>
                     </div>
                 </div>
                 <div id="reset-btn-container">
-                    <button @click.prevent="reset"  class="button is-danger is-rounded override">Reset</button>
+                    <button @click.prevent="reset"  class="styled-button round red">Reset</button>
                 </div>
             </div>
         </div>
@@ -107,14 +107,37 @@ export default {
         margin: 0rem 1rem;
     }
 
-    .override {
+    .styled-button {
+        background-color: #48c774;
+        color: #fff;
         font-weight: bold;
+        font-size: 1rem;
+        cursor: pointer;
+        justify-content: center;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        border: 1.5px solid #fff;
+        box-shadow:4px 4px #555555;
+    }
+
+    .round {
+        border-radius: 2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .red {
+        background-color: #f14668;
+    }
+
+    .styled-button:hover {
+        background: orange;
         border: 1.5px solid #fff;
     }
 
-    .override:hover {
-        background: orange;
+    .styled-button:active {
         border: 1.5px solid #fff;
+        transform: translateY(4px);
     }
 
     #reset-btn-container {
